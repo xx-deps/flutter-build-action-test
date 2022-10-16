@@ -16,12 +16,12 @@ jobs:
          channel: 'stable'
          cache: true
          flutter-version: '3.3.x'
-#          cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' # optional, change this to force refresh cache
-#          cache-path: ${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch
+         cache-key: 'flutter-:os:-:channel:-:version:-:arch:-:hash:' # optional, change this to force refresh cache
+         cache-path: ${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:
          # optional, change this to specify the cache path
          architecture: x64
-     - run: flutter config --enable-windows-desktop
      - run: flutter --version
-     - run: flutter build windows
+     - run: flutter pub get
+     - run: flutter build windows --no-pub
   
 
